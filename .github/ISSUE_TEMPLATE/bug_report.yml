@@ -1,0 +1,28 @@
+name: "Bug report"
+description: "Reporte um problema"
+title: "[BUG] <título curto>"
+labels: ["bug", "cliente"]
+body:
+  - type: input
+    id: contato
+    attributes:
+      label: Contato
+      description: E-mail ou telefone
+      placeholder: "seuemail@exemplo.com"
+  - type: textarea
+    id: descricao
+    attributes:
+      label: Descrição
+      description: O que aconteceu? Passos para reproduzir?
+      placeholder: Descreva aqui...
+      render: markdown
+    validations:
+      required: true
+  - type: dropdown
+    id: severidade
+    attributes:
+      label: Severidade
+      options:
+        - baixa
+        - média
+        - alta
