@@ -1,4 +1,6 @@
 <?php
+// no topo do header.php, garanta uma base_url consistente:
+$base_url = rtrim((getenv('APP_BASE_URL') ?: ($_SERVER['APP_BASE_URL'] ?? '/projetos/')), '/') . '/';
 require __DIR__ . '/auth.php';
 $config = require __DIR__ . '/config.php';
 ?>
@@ -21,6 +23,9 @@ $config = require __DIR__ . '/config.php';
         <li class="nav-item"><a class="nav-link" href="statuses_list.php">Status</a></li>
         <li class="nav-item"><a class="nav-link" href="reports.php">Relatórios</a></li>
         <li class="nav-item"><a class="nav-link" href="stakeholders_list.php">Partes Interessadas</a></li>
+  	<li class="nav-item"><a class="nav-link" href="<?= $base_url ?>reportar.html">Reportar problema</a></li>
+  	<li class="nav-item"><a class="nav-link" href="<?= $base_url ?>consultar.php">Consultar</a></li>
+  	<li class="nav-item"><a class="nav-link" href="<?= $base_url ?>meus_chamados.php">Meus chamados</a></li>
       </ul>
       <ul class="navbar-nav">
         <?php if (current_user()): ?>
